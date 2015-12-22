@@ -8,32 +8,52 @@ public class ArrayQueue {
 	int flag;
 	int qsize;
 
-	public ArrayQueue(int size) {
-		// TODO Auto-generated constructor stub
-		rear = -1;
-		front = -1;
-		qsize = size;
-		queue = new int[qsize];
+	public int getQsize() {
+		return qsize;
 	}
 
-	int Enqueue(int value) {
-		if (rear == qsize)
-			flag = 0;
-		else {
-			rear++;
+	public void setQsize(int qsize) {
+		this.qsize = qsize;
+	}
+
+	int value;
+
+	public ArrayQueue(int size) {
+		super();
+		this.front = 0;
+		this.rear = 0;
+		this.qsize = size;
+		this.queue = new int[qsize];
+	}
+
+	public boolean Enqueue(int value) {
+		if (rear <= qsize - 1) {
 			queue[rear] = value;
-			if (front == -1)
-				front = 0;
-			flag = 1;
+			rear++;
+			return true;
+		} else
+			return false;
+	}
+
+	public void Dequeue() {
+		if(front==rear)
+		{
+			System.out.println("Element Removed: "+queue[front]);
+			front=rear=-1;
 		}
-		return flag;
+		else
+		{
+			System.out.println("Element Removed: "+queue[front]);
+			front++;
+		}
+
 	}
-	
-	int Dequeue(){
-		int value;
-		value=queue[front];
-		front++;
-		return value;
-		
+
+	void display() {
+		System.out.println("The elements in the Array Queue");
+		for (Integer i : queue) {
+			System.out.println(i);
+		}
 	}
+
 }

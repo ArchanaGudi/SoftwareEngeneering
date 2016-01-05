@@ -1,6 +1,6 @@
 package Queue;
 
-public class ArrayQueue {
+public class ArrayQueue extends Queue {
 
 	int rear;
 	int front;
@@ -26,34 +26,35 @@ public class ArrayQueue {
 		this.queue = new int[qsize];
 	}
 
-	public boolean Enqueue(int value) {
+	@Override
+	public void Enqueue(int val) {
+		// TODO Auto-generated method stub
 		if (rear <= qsize - 1) {
 			queue[rear] = value;
 			rear++;
-			return true;
-		} else
-			return false;
+		}
 	}
 
+	@Override
 	public void Dequeue() {
-		if(front==rear)
-		{
-			System.out.println("Element Removed: "+queue[front]);
-			front=rear=-1;
-		}
-		else
-		{
-			System.out.println("Element Removed: "+queue[front]);
+		// TODO Auto-generated method stub
+		if (front == rear) {
+			System.out.println("Element Removed: " + queue[front]);
+			front = rear = -1;
+		} else {
+			System.out.println("Element Removed: " + queue[front]);
 			front++;
 		}
-
 	}
 
-	void display() {
+	@Override
+	public void Display() {
+		// TODO Auto-generated method stub
 		System.out.println("The elements in the Array Queue");
 		for (Integer i : queue) {
 			System.out.println(i);
 		}
+
 	}
 
 }

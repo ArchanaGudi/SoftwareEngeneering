@@ -21,7 +21,7 @@ public class ArrayListQueue extends Queue {
 	public void Dequeue() {
 		// TODO Auto-generated method stub
 		if (queue.isEmpty()) {
-			System.out.println("Array List Queue Is Empty");
+			//System.out.println("Array List Queue Is Empty");
 		} else
 			System.out.println("Deleted element from the Array List " + queue.remove(0));
 	}

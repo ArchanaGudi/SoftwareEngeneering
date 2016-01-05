@@ -30,7 +30,7 @@ public class ArrayQueue extends Queue {
 	public void Enqueue(int val) {
 		// TODO Auto-generated method stub
 		if (rear <= qsize - 1) {
-			queue[rear] = value;
+			queue[rear] = val;
 			rear++;
 		}
 	}
